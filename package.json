@@ -1,0 +1,40 @@
+{
+  "name": "vincearter-11ty-site",
+  "version": "1.0.0",
+  "description": "VinceArter.com redesign using 11ty, Tailwind CSS, and daisyUI",
+  "main": "index.js",
+  "type": "module",  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "build:subnew": "cross-env ELEVENTY_PATH_PREFIX=/new eleventy",
+    "start": "npm run dev",
+    "stop": "npx kill-port 8080",
+    "stop:all": "npx kill-port 8080 8081 8082 8083 8084 && echo 'Stopped all common 11ty development servers.'",
+    "status": "echo 'Checking for running development servers on ports 8080-8084...' && netstat -ano | findstr :808 | findstr LISTENING || echo 'No development servers found running on ports 8080-8084.'"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "tailwind",
+    "daisyui",
+    "static-site"
+  ],
+  "author": "Vincent Lee Arter, Jr. <vince@vincearter.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.1",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "cross-env": "^7.0.3",
+    "daisyui": "^5.0.43",
+    "kill-port": "^2.0.1",
+    "markdown-it-anchor": "^9.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0"
+  }
+}

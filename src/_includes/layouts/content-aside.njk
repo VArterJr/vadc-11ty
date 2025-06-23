@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+---
+
+{% set contentParts = content | split("<!-- ASIDE -->") %}
+{% set mainContent = contentParts[0] %}
+{% set asideContentMarkdown = contentParts[1] %}
+
+<div class="w-[95%] mx-auto px-4 py-8">
+  <!-- Page Header -->
+  {% if title %}
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
+    {% if description %}
+    <p class="text-xl text-base-content/70">{{ description }}</p>
+    {% endif %}
+  </div>
+  {% endif %} <!-- Two Column Layout: 75% content, 25% aside -->
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <!-- Main Content Area (75%) -->
+    <div class="lg:col-span-3">
+      <div class="prose prose-lg max-w-none">
+        {{ mainContent | safe }}
+      </div>
+    </div> <!-- Sidebar/Aside (25%) -->
+    <div class="lg:col-span-1">
+      <div class="card bg-base-100 shadow-xl sticky top-8">
+        <div class="card-body">
+          {% if asideTitle %}
+          <h3 class="card-title">{{ asideTitle }}</h3>
+          {% endif %}
+
+          {% if asideContentMarkdown %}
+          <div class="prose prose-sm max-w-none">
+            {{ asideContentMarkdown | markdownify | safe }}
+          </div>
+          {% elif asideContent %}
+          <div class="prose prose-sm max-w-none">
+            {{ asideContent | safe }}
+          </div>
+          {% else %}
+          <!-- Default aside content if none specified -->
+          <h3 class="card-title">Quick Links</h3>
+          <div class="space-y-2">
+            <a href="{{ '/pages/about/' | url }}" class="btn btn-outline btn-sm btn-block">About</a>
+            <a href="{{ '/pages/cv/' | url }}" class="btn btn-outline btn-sm btn-block">CV/Resume</a>
+            <a href="{{ '/pages/tech/' | url }}" class="btn btn-outline btn-sm btn-block">Tech Projects</a>
+            <a href="{{ '/pages/posts/' | url }}" class="btn btn-outline btn-sm btn-block">Blog Posts</a>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4 class="font-semibold">Connect</h4>
+          <div class="space-y-1">
+            <a href="mailto:vince@vincearter.com" class="link link-primary text-sm">vince@vincearter.com</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
