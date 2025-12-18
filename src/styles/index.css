@@ -1,9 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: lemonade --default, retro, light, dark, cupcake, synthwave, 
-    bumblebee, emerald, corporate, cyberpunk, valentine, halloween, garden,
+  themes: lemonade --default, retro, light, dark, cupcake, bumblebee, emerald, 
+    corporate, synthwave, cyberpunk, valentine, halloween, garden,
     forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk,
-    autumn, business, acid, night, coffee, winter, dim, nord, sunset;
+    autumn, business, acid, night, coffee, winter, dim, nord, sunset, caramellatte, 
+    abyss, silk;
 }
 
 /* Custom Typography Plugin Styles for better Markdown formatting */

@@ -27,9 +27,8 @@ layout: layouts/base.njk
       <div class="card bg-base-100 shadow-xl sticky top-8">
         <div class="card-body">
           {% if asideTitle %}
-          <h3 class="card-title">{{ asideTitle }}</h3>
+          <h2 class="text-xl font-bold text-center mb-4">{{ asideTitle }}</h2>
           {% endif %}
-
           {% if asideContentMarkdown %}
           <div class="prose prose-sm max-w-none">
             {{ asideContentMarkdown | markdownify | safe }}

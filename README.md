@@ -121,5 +121,6 @@ Edit the `tailwind.config.mjs` file to add or remove daisyUI themes from the ava
 - Website: https://www.vincearter.com
 
 ## Version History
-
+- Version 0.1.2 (29-June-2025): Completed the Reviews pages. Added the three new daisyUI for v5: caramellatte, abyss, silk.
+- Version 0.1.1 (24-June-2025): Added banner image to the home page.
 - Version 0.1.0 (23-June-2025): The first committed "version" of the site in a working state with Home (index), About, and CV almost completed and the rest using temporary content.
